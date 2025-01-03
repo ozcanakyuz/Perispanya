@@ -2,6 +2,7 @@ using Perispanya.BusinnesLayer.Abstract;
 using Perispanya.BusinnesLayer.Concrete;
 using Perispanya.DataAccessLayer.Abstract;
 using Perispanya.DataAccessLayer.Context;
+using Perispanya.DataAccessLayer.EntityFramework;
 
 var builder = WebApplication.CreateBuilder(args);
 
