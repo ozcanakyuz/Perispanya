@@ -1,0 +1,413 @@
+  @import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce:wght@400;500&family=Nixie+One&display=swap');
+
+* {
+   margin:0; 
+   padding:0;
+   font-family:'Birthstone Bounce','Nixie One', sans-serif;
+   transition: all 200ms;
+}
+
+body {
+    background-color: rgb(252, 224, 151);
+}
+
+#navbarNav .navbar-nav .nav-item span:hover{
+    color: rgb(255, 255, 255);
+}
+
+#navbarNav .navbar-nav .nav-item a.active {
+    color: rgb(255, 255, 255);
+}
+
+#navbarNav .navbar-nav .nav-item a {
+    background-color: rgb(185, 185, 185);
+    border: 2px solid rgb(158, 158, 158);
+    font-size: 1.1rem;
+    color: black;
+
+}
+.carousel-caption h5 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+}
+
+
+.carousel-item {
+    transition: transform 2s ease, opacity 2s ease;
+}
+
+.container-peris a:hover {
+    opacity: .6;
+}
+
+.products .container {
+    padding-top: 2rem;
+    margin: auto;
+    display: flex;
+    text-align: center;
+}
+
+#four-cup img:hover {
+    transform: scale(1.1);
+}
+
+.card .fa-solid {
+    font-size: .8rem
+}
+
+.main-header {
+    background-image: url('img/bakery-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+    width: 61%;
+    height: 100vh;
+    color: #fff;
+    position: relative;
+}
+
+.main-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.menu .container h5, p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: brown;
+    text-align: center;
+}
+
+
+@media (min-width: 576px) {
+    #contactus {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
+    
+}
+
+@media (max-width: 576px) {
+    #contactus {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      flex-wrap:wrap;
+    }
+
+    .navbar-toggler {
+        position: absolute;
+        z-index: 3;
+        left: 21rem;
+    }
+
+    #navbarNav {
+        padding-top: 15rem;
+    }
+    
+    #navbarNav .nav-item {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+        text-align: center;
+    }
+
+    #navbarNav .navbar-nav .nav-item a {
+        background-color: rgb(252, 224, 151);
+        border: none;
+        border: 2px solid rgb(252, 224, 151);
+    }
+
+
+    #contact-main{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+    
+    #menu-card {
+        gap: 1rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    
+    .menu .container {
+        width: 90%;
+        height: 100%;
+        background-color: white;
+    }
+
+
+    #contactus {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: auto;
+    }
+
+    #four-cup {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 60%;
+        margin: auto;
+        gap: 1rem;
+    }
+    
+
+    #footer-top {
+        width: 90%;
+        margin: auto;
+        background-color: rgb(252, 224, 151);
+        border: none;
+    }
+
+    #carouselExampleSlidesOnly {
+        margin: auto;
+        width: 90%;
+    }
+}
+
+@media (max-width: 986px) {
+    #our-story {
+        width: 90%;
+        margin: auto;
+        gap: 0;
+    }
+    
+    .container-peris {
+        height: 2.3rem;
+    }
+
+    #menu-card .card-body {
+        padding: 1rem .1rem;
+    }
+
+    /*               NAVBAR                 */
+
+    .navbar-toggler {
+        position: absolute;
+        z-index: 3;
+    }
+
+    #navbarNav {
+        padding-top: 16rem;
+    }
+    
+    #navbarNav .nav-item {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+        text-align: center;
+    }
+
+    #navbarNav .navbar-nav .nav-item a {
+        background-color: rgb(252, 224, 151);
+        border: none;
+        border: 2px solid rgb(252, 224, 151);
+        height: 3.2rem;
+    }
+    /*                 NAVBAR END                   */
+
+    #header-logo {
+        text-align: center;
+    }
+
+    #header-logo img {
+        width: 3.5rem;
+        padding-top: 2rem;
+    }
+
+    #header-text1 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: rgb(34, 34, 34);
+    }
+
+    #header-text2 {
+        position: relative;
+        top: -1.5rem;
+        font-size: .8rem;
+        font-family: monospace;
+        color: rgb(34, 34, 34);
+        letter-spacing: 3px;
+        left: .5rem
+    }
+
+    #menu-card h5, p {
+        font-size: .6rem;
+    }
+    
+    #menu-text {
+        padding-top: 3rem;
+    }
+
+    #our-story-cake {
+        width: 80%;
+        margin: 2rem 0 0 2rem;
+        height: 15rem;
+    }
+
+    #our-story-card {
+        font-size: .9rem;
+    }
+
+    #our-story-card {
+        height: 20rem; 
+        text-align: center;
+        align-items: center;
+        vertical-align: middle;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 1.2rem;
+        color: rgb(92, 63, 0);
+    }
+
+    #star {
+        width: 80%;
+        margin: auto; 
+        background-color: rgb(252, 224, 151);
+        border: none;
+    }
+    
+
+    .navbar .container-fluid {
+        position: absolute;
+        z-index: 3;
+    }
+
+    .navbar .container-fluid .navbar-collapse {
+        z-index: 3;
+        position: relative;
+    }
+}
+
+
+
+@media (min-width: 576px) {
+    #four-cup {
+        margin: auto;
+        width: 60%;
+        gap: 1rem;
+    }
+
+    .container-peris {
+        height: 6rem;
+    }
+
+    #menu-card {
+        gap: 3rem;
+    }
+
+    #header-logo{
+        text-align: center;
+    }
+
+    #header-text1 {
+        font-size: 3rem;
+        font-weight: bold;
+        color: rgb(34, 34, 34);
+    }
+
+    #header-text2 {
+        position: relative;
+        top: -1rem;
+        font-family: monospace;
+        color: rgb(34, 34, 34);
+        letter-spacing: 3px;
+        left: .5rem
+    }
+
+    #header-logo img {
+        width: 5rem;
+        padding-top: 2rem;
+    }
+
+    #contactus-html{
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    .menu .container {
+        width: 61%;
+        height: 100%;
+        background-color: white;
+        padding: 4rem;
+        margin: auto;
+        gap: 2.5rem;
+    }
+
+    #navbarNav .nav-item {
+        width: 12rem;
+        text-align: center;
+    }
+
+    #contactus {
+        width: 60%;
+        text-align: center;
+        line-height: 1.8rem;
+        line-height: 1rem;
+        margin: auto;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+
+    #navbarNav {
+        gap: 4rem;
+        justify-content: center;
+    }
+
+    #footer-top {
+        width: 60%;
+        margin: auto;
+        background-color: rgb(252, 224, 151);
+        border: none;
+    }
+
+    #carouselExampleSlidesOnly {
+        margin: auto;
+        width: 60%;
+    }
+    
+    #our-story {
+        width: 58rem;
+        margin: auto;
+        gap: 4rem;
+    }
+
+    #our-story-cake {
+        margin: 2rem;
+        height: 30rem;
+    }
+
+    #our-story-card {
+        height: 30rem; 
+        text-align: center;
+        align-items: center;
+        vertical-align: middle;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 1.2rem 1.2rem;
+        color: rgb(92, 63, 0);
+    }
+
+    #star {
+        width: 61%;
+        margin: auto; 
+        background-color: rgb(252, 224, 151);
+        border: none;
+    }
+}
