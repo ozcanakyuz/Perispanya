@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Perispanya.DataAccessLayer\Perispanya.DataAccessLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Concrete\" />
+  </ItemGroup>
+
 </Project>
