@@ -1,0 +1,72 @@
+﻿@model CreateSliderDto
+
+@{
+    ViewData["Title"] = "CreateSlider";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container">
+    <div class="page-inner">
+        <div class="page-header">
+            <h3 class="fw-bold mb-3">Sliders</h3>
+            <ul class="breadcrumbs mb-3">
+                <li class="nav-home">
+                    <a href="#">
+                        <i class="icon-home"></i>
+                    </a>
+                </li>
+                <li class="separator">
+                    <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Add Slider</a>
+                </li>
+                <li class="separator">
+                    <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                    <a href="#">New Create Slider</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Add Slider Table</div>
+                    </div>
+                    <div class="card-body">
+
+                        <form method="post" onsubmit="return validateForm()">
+                            <label>
+                                Slider Title
+                                <span asp-validation-for="Title" class="text-danger" style="display:block;"></span>
+                            </label>
+                            <input type="text" asp-for="Title" class="form-control" />
+                            <br />
+                            <label>Slider Image</label>
+                            <input type="text" asp-for="ImageUrl" class="form-control" />
+                            <br />
+                            <button class="btn btn-primary">Create Slider</button>
+                        </form>
+
+                        <script>
+                            function validateForm() {
+                                var SliderName = document.querySelector('input[name="SliderName"]').value;
+                                if (SliderName.trim() === "") {
+                                    alert("Slider Name alanı bos birakilamaz!");
+                                    return false;
+                                }
+                                return true;
+                            }
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
