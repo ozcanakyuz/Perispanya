@@ -52,7 +52,16 @@
                                     <tr>
                                         <td>@item.CategoryId</td>
                                         <td>@item.CategoryName</td>
-                                        <td>@item.CategoryStatus</td>
+                                        <td class="align-middle text-sm">
+                                            @if (@item.CategoryStatus == true)
+                                            {
+                                                <span class="badge badge-sm bg-success">Active</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge badge-sm bg-gradient-danger">Deactive</span>
+                                            }
+                                        </td>
                                         <td><a href="/Categories/UpdateCategory/@item.CategoryId" class="btn btn-success">Update</a></td>
 										<td><a href="/Categories/DeleteCategory/@item.CategoryId" class="btn btn-danger">Delete</a></td>
                                     </tr>

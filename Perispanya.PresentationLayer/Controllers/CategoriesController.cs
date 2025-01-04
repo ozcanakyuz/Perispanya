@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Perispanya.BusinnesLayer.Abstract;
+using Perispanya.EntityLayer.Concrete;
 
 namespace Perispanya.PresentationLayer.Controllers
 {
@@ -16,6 +17,17 @@ namespace Perispanya.PresentationLayer.Controllers
         {
             var values = _categoryService.TGetAll();
             return View(values);
+        }
+        [HttpGet]
+        public IActionResult CreateCategory()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult CreateCategory(Category category)
+        {
+            _categoryService.TInsert(category);
+            return RedirectToAction("CategoryList");
         }
     }
 }
