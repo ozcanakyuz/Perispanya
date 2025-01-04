@@ -144,20 +144,6 @@ body {
         width: 100%;
     }
     
-    #menu-card {
-        gap: 1rem;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    
-    .menu .container {
-        width: 90%;
-        height: 100%;
-        background-color: white;
-    }
-
-
     #contactus {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -171,7 +157,37 @@ body {
         margin: auto;
         gap: 1rem;
     }
-    
+
+
+    .text-brown {
+        color: brown;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+        color: #555;
+    }
+
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    .card {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
 
     #footer-top {
         width: 90%;
@@ -197,9 +213,6 @@ body {
         height: 2.3rem;
     }
 
-    #menu-card .card-body {
-        padding: 1rem .1rem;
-    }
 
     /*               NAVBAR                 */
 
@@ -251,10 +264,6 @@ body {
         color: rgb(34, 34, 34);
         letter-spacing: 3px;
         left: .5rem
-    }
-
-    #menu-card h5, p {
-        font-size: .6rem;
     }
     
     #menu-text {
@@ -313,10 +322,6 @@ body {
 
     .container-peris {
         height: 6rem;
-    }
-
-    #menu-card {
-        gap: 3rem;
     }
 
     #header-logo{
