@@ -1,7 +1,7 @@
-﻿@model CreateSliderDto
+﻿@model UpdateSliderDto
 
 @{
-    ViewData["Title"] = "CreateSlider";
+    ViewData["Title"] = "UpdateSlider";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
@@ -19,13 +19,13 @@
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="#">Add Slider</a>
+                    <a href="#">Update Slider</a>
                 </li>
                 <li class="separator">
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="#">New Create Slider</a>
+                    <a href="#">Update Slider</a>
                 </li>
             </ul>
         </div>
@@ -34,21 +34,19 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Add Slider Table</div>
+                        <div class="card-title">Update Slider Table</div>
                     </div>
                     <div class="card-body">
 
                         <form method="post" onsubmit="return validateForm()">
-                            <label>
-                                Slider Title
-                                <span asp-validation-for="Title" class="text-danger" style="display:block;"></span>
-                            </label>
+                            <input type="hidden" asp-for="SliderId" />
+                            <label>Slider Name</label>
                             <input type="text" asp-for="Title" class="form-control" />
                             <br />
                             <label>Slider Image</label>
                             <input type="text" asp-for="ImageUrl" class="form-control" />
                             <br />
-                            <button class="btn btn-primary">Create Slider</button>
+                            <button class="btn btn-success">Update Slider</button>
                         </form>
 
                         <script>
@@ -58,7 +56,7 @@
                                     alert("Slider Title alanı boş bırakılamaz!");
                                     return false;
                                 }
-                                return true;  
+                                return true;
                             }
                         </script>
 
@@ -69,4 +67,5 @@
         </div>
     </div>
 </div>
+
 

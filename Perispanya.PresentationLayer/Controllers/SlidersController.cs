@@ -30,14 +30,18 @@ namespace Perispanya.PresentationLayer.Controllers
         [HttpPost]
         public IActionResult CreateSlider(CreateSliderDto createSliderDto)
         {
-            var value = _mapper.Map<Slider>(createSliderDto);
-            _sliderService.TInsert(value);
-            return RedirectToAction("SliderList");
+            if (ModelState.IsValid)
+            {
+                var value = _mapper.Map<Slider>(createSliderDto);
+                _sliderService.TInsert(value);
+                return RedirectToAction("SliderList");
+            }
+            return View(createSliderDto);
         }
 
         public IActionResult DeleteSlider(int id)
         {
-            _sliderService.TGetById(id);
+            _sliderService.TDelete(id);
             return RedirectToAction("SliderList");
         }
 
@@ -45,14 +49,19 @@ namespace Perispanya.PresentationLayer.Controllers
         public IActionResult UpdateSlider(int id)
         {
             var value = _sliderService.TGetById(id);
-            return View(_mapper.Map<GetByIdSliderDto>(value));
+            var updateSliderDto = _mapper.Map<UpdateSliderDto>(value);
+            return View(updateSliderDto);
         }
         [HttpPost]
         public IActionResult UpdateSlider(UpdateSliderDto updateSliderDto)
         {
-            var value = _mapper.Map<Slider>(updateSliderDto);
-            _sliderService.TUpdate(value);
-            return RedirectToAction("SliderList");
+            if (ModelState.IsValid)
+            {
+                var value = _mapper.Map<Slider>(updateSliderDto);
+                _sliderService.TUpdate(value);
+                return RedirectToAction("SliderList");
+            }
+            return View(updateSliderDto);
         }
     }
 }
