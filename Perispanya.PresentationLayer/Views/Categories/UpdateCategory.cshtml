@@ -1,0 +1,74 @@
+﻿@model Category
+
+@{
+    ViewData["Title"] = "UpdateCategory";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container">
+    <div class="page-inner">
+        <div class="page-header">
+            <h3 class="fw-bold mb-3">Categories</h3>
+            <ul class="breadcrumbs mb-3">
+                <li class="nav-home">
+                    <a href="#">
+                        <i class="icon-home"></i>
+                    </a>
+                </li>
+                <li class="separator">
+                    <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Update Category</a>
+                </li>
+                <li class="separator">
+                    <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Update Category</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Update Category Table</div>
+                    </div>
+                    <div class="card-body">
+
+                        <form method="post" onsubmit="return validateForm()">
+                            <input type="hidden" asp-for="CategoryId" />
+                            <label>Category Name</label>
+                            <input type="text" asp-for="CategoryName" class="form-control" />
+                            <span asp-validation-for="CategoryName" class="text-danger" style="display:block;"></span>
+                            <br />
+                            <label>Status</label>
+                            <select asp-for="CategoryStatus" class="form-control">
+                                <option value="true">Active</option>
+                                <option value="false">Deactive</option>
+                            </select>
+                            <br />
+                            <button class="btn btn-success">Update Category</button>
+                        </form>
+
+                        <script>
+                            function validateForm() {
+                                var categoryName = document.querySelector('input[name="CategoryName"]').value;
+                                if (categoryName.trim() === "") {
+                                    alert("Category Name cannot be empty!");
+                                    return false;
+                                }
+                                return true;
+                            }
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

@@ -35,5 +35,17 @@ namespace Perispanya.PresentationLayer.Controllers
             _categoryService.TDelete(id);
             return RedirectToAction("CategoryList");
         }
+
+        [HttpGet]
+        public IActionResult UpdateCategory(int id)
+        {
+            var values = _categoryService.TGetById(id);
+            return View(values);
+        }
+        public IActionResult UpdateCategory(Category category)
+        {
+            _categoryService.TUpdate(category);
+            return RedirectToAction("CategoryList");
+        }
     }
 }
