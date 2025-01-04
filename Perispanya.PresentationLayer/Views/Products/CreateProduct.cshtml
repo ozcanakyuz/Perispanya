@@ -1,0 +1,83 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "CreateProduct";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container">
+    <div class="page-inner">
+        <div class="page-header">
+            <h3 class="fw-bold mb-3">Products</h3>
+            <ul class="breadcrumbs mb-3">
+                <li class="nav-home">
+                    <a href="#">
+                        <i class="icon-home"></i>
+                    </a>
+                </li>
+                <li class="separator">
+                    <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Add Product</a>
+                </li>
+                <li class="separator">
+                    <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                    <a href="#">New Create Product</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Add Product Table</div>
+                    </div>
+                    <div class="card-body">
+
+                        <form method="post" onsubmit="return validateForm()">
+                            <label>
+                                Product Name
+                                <span asp-validation-for="ProductName" class="text-danger" style="display:block;"></span>
+                            </label>
+                            <input type="text" asp-for="ProductName" class="form-control" />
+                            <br />
+                            <label>Product Stock</label>
+                            <input type="number" asp-for="Stock" class="form-control" />
+                            <br />
+                            <label>Product Price</label>
+                            <input type="text" asp-for="Price" class="form-control" />
+                            <br />
+                            <label>Product Image</label>
+                            <input type="text" asp-for="ImageUrl" class="form-control" />
+                            <br />
+                            <label>Product Description</label>
+                            <input type="text" asp-for="Description" class="form-control" />
+                            <br />
+                            <button class="btn btn-primary">Create Product</button>
+                        </form>
+
+                        <script>
+                            function validateForm() {
+                                var ProductName = document.querySelector('input[name="ProductName"]').value;
+                                if (ProductName.trim() === "") {
+                                    alert("Product Name alanı bos birakilamaz!");
+                                    return false;
+                                }
+                                return true;
+                            }
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
