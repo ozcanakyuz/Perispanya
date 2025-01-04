@@ -44,5 +44,23 @@ namespace Perispanya.PresentationLayer.Controllers
             _aboutService?.TDelete(id);
             return RedirectToAction("AboutList");
         }
+        [HttpGet]
+        public IActionResult UpdateAbout(int id)
+        {
+            var value = _aboutService.TGetById(id);
+            var updateAboutDto = _mapper.Map<UpdateAboutDto>(value);
+            return View(updateAboutDto);
+        }
+        [HttpPost]
+        public IActionResult UpdateAbout(UpdateAboutDto updateAboutDto)
+        {
+            if (ModelState.IsValid)
+            {
+                var value = _mapper.Map<About>(updateAboutDto);
+                _aboutService.TUpdate(value);
+                return RedirectToAction("AboutList");
+            }
+            return View(updateAboutDto);
+        }
     }
 }
