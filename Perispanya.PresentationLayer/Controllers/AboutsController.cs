@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Perispanya.BusinnesLayer.Abstract;
 using Perispanya.DtoLayer.Dtos.AboutDtos;
+using Perispanya.EntityLayer.Concrete;
 
 namespace Perispanya.PresentationLayer.Controllers
 {
@@ -20,6 +21,22 @@ namespace Perispanya.PresentationLayer.Controllers
         {
             var values = _aboutService.TGetAll();
             return View(_mapper.Map<List<ResultAboutDto>>(values));
+        }
+        [HttpGet]
+        public IActionResult CreateAbout()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult CreateAbout(CreateAboutDto createAboutDto)
+        {
+            if (ModelState.IsValid)
+            {
+                var value = _mapper.Map<About>(createAboutDto);
+                _aboutService.TInsert(value);
+                return RedirectToAction("AboutList");
+            }
+            return View(createAboutDto);
         }
     }
 }
