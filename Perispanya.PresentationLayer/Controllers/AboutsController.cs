@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.Operations;
 using Perispanya.BusinnesLayer.Abstract;
 using Perispanya.DtoLayer.Dtos.AboutDtos;
 using Perispanya.EntityLayer.Concrete;
@@ -37,6 +38,11 @@ namespace Perispanya.PresentationLayer.Controllers
                 return RedirectToAction("AboutList");
             }
             return View(createAboutDto);
+        }
+        public IActionResult DeleteAbout(int id)
+        {
+            _aboutService?.TDelete(id);
+            return RedirectToAction("AboutList");
         }
     }
 }
