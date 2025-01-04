@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Perispanya.BusinnesLayer\Perispanya.BusinnesLayer.csproj" />
+    <ProjectReference Include="..\Perispanya.DtoLayer\Perispanya.DtoLayer.csproj" />
   </ItemGroup>
 
 </Project>
