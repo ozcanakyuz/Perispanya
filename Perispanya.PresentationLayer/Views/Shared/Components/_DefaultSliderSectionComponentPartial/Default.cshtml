@@ -1,0 +1,32 @@
+﻿@model List<Slider>
+
+@{
+	bool isFirst = true;
+}
+
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+        @foreach (var item in Model)
+        {
+            <div class="carousel-item @(isFirst ? "active" : "")">
+                <img src="@item.ImageUrl" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-flex justify-content-center align-items-end">
+                    <h5 style="color: white; background: rgba(0, 0, 0, 0.5); padding: 15px; border-radius: 5px;">@item.Title</h5>
+                </div>
+            </div>
+            isFirst = false;
+        }
+    </div>
+
+    <!-- Slider Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
