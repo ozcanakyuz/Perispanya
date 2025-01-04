@@ -36,5 +36,16 @@ namespace Perispanya.PresentationLayer.Controllers
             _productService.TDelete(id);
             return RedirectToAction("ProductList");
         }
+        [HttpGet]
+        public IActionResult UpdateProduct(int id)
+        {
+            var values = _productService.TGetById(id);
+            return View(values);
+        }
+        public IActionResult UpdateProduct(Product product)
+        {
+            _productService.TUpdate(product);
+            return RedirectToAction("ProductList");
+        }
     }
 }
